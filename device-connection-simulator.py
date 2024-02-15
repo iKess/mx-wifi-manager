@@ -2,19 +2,21 @@ from pybleno import *
 import sys
 import signal
 from DeviceWifiService import *
+from HubWifiService import *
 import asyncio 
 
 
 
 bleno = Bleno()
 
-primaryService = DeviceWifiService()
+deviceService = DeviceWifiService()
+hubService = HubWifiService()
 
 def onStateChange(state):
    print('on -> stateChange: ' + state)
 
    if (state == 'poweredOn'):
-       bleno.startAdvertising('MXDeviceWifiManager', [primaryService.uuid])
+       bleno.startAdvertising('MXWifiManager', [deviceService.uuid])
    else:
      bleno.stopAdvertising()
 bleno.on('stateChange', onStateChange)
@@ -27,7 +29,8 @@ def onAdvertisingStart(error):
             print('setServices: %s'  % ('error ' + error if error else 'success'))
             
         bleno.setServices([
-            primaryService
+            hubService,
+            deviceService
         ], on_setServiceError)
 bleno.on('advertisingStart', onAdvertisingStart)
 

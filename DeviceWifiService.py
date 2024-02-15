@@ -1,5 +1,4 @@
 from pybleno import *
-from SetSSIDCharacteristic import *
 from SetWifiInfoCharacteristic import *
 from ConnectWifiCharacteristic import *
 from SetBrokerInfoCharacteristic import *

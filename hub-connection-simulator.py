@@ -14,7 +14,7 @@ def onStateChange(state):
    print('on -> stateChange: ' + state)
 
    if (state == 'poweredOn'):
-       bleno.startAdvertising('MXHubWifiManager', [primaryService.uuid])
+       bleno.startAdvertising('MXWifiManager', [primaryService.uuid])
    else:
      bleno.stopAdvertising()
 bleno.on('stateChange', onStateChange)

@@ -64,7 +64,7 @@ class ConnectWifiCharacteristic(Characteristic):
             'descriptors': [
                   Descriptor({
                     'uuid': '2ABC',
-                    'value': 'Connect Wifi with SSID, PW'
+                    'value': 'Connect Wifi with SSID, PW'.encode('utf-8')
                   }),
             ]
           })
@@ -101,7 +101,7 @@ class SetSSIDCharacteristic(Characteristic):
             'descriptors': [
                   Descriptor({
                     'uuid': '2ABD',
-                    'value': 'Wifi SSID'
+                    'value': 'Wifi SSID'.encode('utf-8')
                   }),
             ]
           })
@@ -128,7 +128,7 @@ class SetPWCharacteristic(Characteristic):
             'descriptors': [
                   Descriptor({
                     'uuid': '2ABF',
-                    'value': 'Wifi Passphrase'
+                    'value': 'Wifi Passphrase'.encode('utf-8')
                   }),
             ]
           })
