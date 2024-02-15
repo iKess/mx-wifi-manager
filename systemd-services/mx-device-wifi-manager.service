@@ -1,0 +1,10 @@
+[Unit]
+Description=MySmaX Device Wifi Manager Service
+After=multi-user.target
+
+[Service]
+Type=idle
+ExecStart=/usr/bin/python3 /usr/local/myssix/wifi-manager/device-connection-simulator.py
+
+[Install]
+WantedBy=multi-user.target
